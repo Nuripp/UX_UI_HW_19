@@ -10,6 +10,7 @@
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
     </head>
     <body>
+    <!-- Navbar -->
         <header class="navigation">
             <div class="inline-block logo">
                 <img src="Images\Logo.png" alt="logo">
@@ -17,14 +18,18 @@
             <nav class="inline-block">
                 <ul>
                     <li class="navigation-text"><a href="#">Home</a></li>
-                    <li class="navigation-text-active"><a class="active" href="#">About Me</a></li>
+                    <li class="navigation-text-active">
+                        <span class="highlight" href="#">About Me</span>
+                    </li>
                     <li class="navigation-text"><a href="Work_index.html">Work</a></li>
                     <li class="navigation-text"><a href="Skills_index.html">Skills</a></li>
                     <li class="navigation-text"><a href="#">Contact</a></li>
                 </ul>
             </nav>
         </header>
+        <!-- Content -->
         <section class="heroImg">
+            <!-- About me section -->
             <h1>About Me</h1>
             <div class="content">
                <div class="text-section">
@@ -32,7 +37,8 @@
                 <div class="text-content">
                     <div class="quote-container">
                         <span class="quote-left">“</span>
-                        <h2>Hello, I'm Nuri! Nice to meet you</h2>
+                        <h2 id="typing-text"></h2>
+                        <span class="cursor" id="cursor"></span>
                     </div>
                     <div class="quote-container">
                         <p>I am a passionate UX/UI designer based in New York. I thrive on solving problems through design solutions, blending creativity with a deep understanding of user needs. Living in New York inspires my approach to creating intuitive and impactful user experiences. I am eager to collaborate with visionary teams.</p>
@@ -44,6 +50,7 @@
                 </div>
                </div>
             </div>
+            <!-- Roles section -->
             <div class="roles">
                 <div class="roles-text">
                     <p>Roles I'm currently looking for...</p>
@@ -55,6 +62,7 @@
                 </div>
             </div>
         </section>
+        <!-- Footer -->
         <footer class="footer">
             <div class="footer content">
                 <div class="footer-logo">
@@ -91,5 +99,8 @@
                 <p>Copyright 2024. All rights reserved.</p>
             </div>
         </footer>
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="js/index.js"></script>
     </body>
 </html>

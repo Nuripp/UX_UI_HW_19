@@ -1,4 +1,4 @@
-/* Header section*/
+/* Font*/
 h1, h2 {
     font-family: "Passion One", sans-serif;
     font-weight: 400;
@@ -13,6 +13,9 @@ h2 {
 body {
     font-family: "DM Sans", sans-serif;
 }
+
+/* Header section*/
+
 .navigation-text {
     font-size: 22px;
     font-weight: 400;
@@ -20,7 +23,30 @@ body {
 .navigation-text-active {
     font-size: 22px;
     font-weight: 700;
+    position: relative;
+    display: inline-block;
+    pointer-events: none;
 }
+
+.navigation-text-active .highlight {
+    position: relative;
+    display: inline-block;
+}
+
+.navigation-text-active .highlight::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    width: 180%;
+    height: 1.2em;
+    background-color: #F9F98E;
+    z-index: -1;
+    pointer-events: none;
+    clip-path: polygon(10% 0%, 90% 0%, 80% 100%, 0% 100%);
+}
+
 
 .inline-block {
     vertical-align: top;
@@ -83,9 +109,10 @@ nav ul {
 }
 nav li {
     margin: 0 20px;
-    display: block;
+    display: inline-block;
     text-align: center;
     padding: 40px;
+    position: relative;
 }
   li:first-child {
     border-right: none
@@ -93,6 +120,25 @@ nav li {
 nav .active{
     background-color: #F9F98E;
     text-align: center;
+}
+
+nav li::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 40%;
+    background: radial-gradient(circle, rgba(229,229,121,0.7) 0%, rgba(229,229,121,0.2) 100%);
+    border-radius: 50%;
+    padding: 0px 0px;
+    z-index: -1;
+    display: none;
+}
+
+nav li.nav-hover::before {
+    display: block;
 }
 
 /* HeroImg section */
@@ -146,16 +192,47 @@ h1::after {
     position: absolute;
     color: black;
 }
+
+.quote-container {
+    position: relative;
+}
+
 .quote-left {
     left: -80px;
-    top: 0;
+    top: -30px;
     font-family: "Passion One", sans-serif;
     position: absolute;
     z-index: 1;
 }
+
+#typing-text {
+    display: inline;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.15em solid black; /* 커서 효과 */
+    animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+/* 커서 깜빡이는 애니메이션 */
+.cursor {
+    display: inline;
+    opacity: 1;
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: black; }
+}
+
 .quote-right {
     right: -60px;
-    bottom: 100px;
+    bottom: 10px;
     left: 580px;
     font-family: "Passion One", sans-serif;
 }
