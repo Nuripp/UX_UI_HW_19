@@ -1,5 +1,7 @@
 console.log("Your index.js file is loaded correctly!");
 
+
+/* Nav hover state */
 $('nav li').hover(
     function() {
         // mouse enter
@@ -15,10 +17,11 @@ $('nav li').hover(
     }
 );
 
+/* text animation */
 document.addEventListener("DOMContentLoaded", function() {
     const text = "Hello, I'm Nuri! Nice to meet you";
     let index = 0;
-    const typingSpeed = 100; // 타이핑 속도 조정 (밀리초 단위)
+    const typingSpeed = 100; 
     const typingElement = document.getElementById('typing-text');
     const cursorElement = document.getElementById('cursor');
 
@@ -28,9 +31,53 @@ document.addEventListener("DOMContentLoaded", function() {
             index++;
             setTimeout(type, typingSpeed);
         } else {
-            cursorElement.style.display = 'inline'; // 타이핑이 끝나면 커서 표시
+            cursorElement.style.display = 'inline';
         }
     }
 
     type();
+});
+
+
+/* Back to Top button */
+document.addEventListener("DOMContentLoaded", function() {
+    const backToTopButton = document.getElementById('back-to-top');
+
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            backToTopButton.classList.add('show');
+        } else {
+            backToTopButton.classList.remove('show');
+        }
+    });
+
+    backToTopButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+});
+
+
+/* Mobile hamburger menu*/
+document.addEventListener("DOMContentLoaded", function() {
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    const overlayNav = document.getElementById('overlay-nav');
+    const mobileHeader = document.querySelector('.mobile-header');
+
+    menuIcon.addEventListener('click', function() {
+        overlayNav.classList.toggle('show');
+        if (overlayNav.classList.contains('show')) {
+            mobileHeader.style.display = 'none';
+        } else {
+            mobileHeader.style.display = 'flex';
+        }
+    });
+
+    closeIcon.addEventListener('click', function() {
+        overlayNav.classList.remove('show');
+        mobileHeader.style.display = 'flex';
+    });
 });
