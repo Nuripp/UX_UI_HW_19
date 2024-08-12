@@ -442,8 +442,8 @@ footer {
     .menu-icon-bg {
         position: absolute;
         margin-right: 30px;
-        width: 50px; /* 아이콘보다 더 큰 배경 크기 */
-        height: 50px; /* 아이콘보다 더 큰 배경 크기 */
+        width: 50px;
+        height: 50px;
         background: radial-gradient(circle, rgba(229, 229, 121, 1) 0%, rgba(229, 229, 121, 0) 100%);
         border-radius: 50%;
         transition: opacity 0.3s;
@@ -456,96 +456,7 @@ footer {
         opacity: 1;
     }
 
-
-    .overlay-nav {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #799CE5;
-        z-index: 999;
-        justify-content: flex-start;
-        align-items: flex-start;
-        flex-direction: column;
-        box-sizing: border-box;
-
-    }
-
-    .overlay-header {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 30px;
-    }
-
-    .overlay-nav ul {
-        list-style: none;
-        padding: 0;
-        margin: 20px 30px;
-        text-align: start;
-        font-family: "Passion One";
-        width: 100%;
-        margin-top: -30px;
-    }
-
-    .overlay-logo {
-        width: 150px;
-    }
-
-    .close-icon {
-        width: 20px;
-        height: 20px;
-        margin-right: 80px;
-        cursor: pointer;
-    }
-
-    .overlay-nav ul li {
-        margin: 60px 0;
-        position: relative;
-    }
-
-    .overlay-nav ul li a {
-        color: black;
-        text-decoration: none;
-        font-size: 32px;
-        display: inline-block;
-        margin-left: 30px;
-        position: relative;
-
-    }
-
-    .overlay-nav ul li a::before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 60%;
-        transform: translate(-50%, -50%);
-        width: 180%;
-        height: 80%;
-        background-color: rgba(249, 249, 142, 0.8);
-        z-index: -1;
-        pointer-events: none;
-        clip-path: polygon(10% 0%, 90% 0%, 80% 100%, 0% 100%);
-        opacity: 0;
-        transition: opacity 0.3s;
-
-    }
-
-    .overlay-nav ul li a:hover::before {
-        opacity: 1;
-    }
-
-    .overlay-nav.show {
-        display: flex;
-    }
-
-    .overlay-nav.show ~ .mobile-header {
-        display: none;
-    }
-
+    
     h1 {
         font-size: 34px;
         margin-top: 160px;
@@ -756,6 +667,124 @@ footer {
         margin-top: 160px;
     }
 
+    .overlay-nav {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #799CE5;
+        z-index: 9999;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        box-sizing: border-box;
+    }
+
+    .overlay-header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 30px;
+    }
+
+    .overlay-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 20px 30px;
+        text-align: start;
+        font-family: "Passion One";
+        width: 100%;
+        margin-top: -30px;
+    }
+
+    .overlay-logo {
+        width: 150px;
+    }
+
+    .close-icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 80px;
+        cursor: pointer;
+    }
+
+    .overlay-nav ul li {
+        margin: 60px 0;
+        position: relative;
+    }
+
+    .overlay-nav ul li a {
+        color: black;
+        text-decoration: none;
+        font-size: 32px;
+        display: inline-block;
+        margin-left: 30px;
+        position: relative;
+    }
+
+    .overlay-nav ul li a::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 60%;
+        transform: translate(-50%, -50%);
+        width: 180%;
+        height: 80%;
+        background-color: rgba(249, 249, 142, 0.8);
+        z-index: -1;
+        pointer-events: none;
+        clip-path: polygon(10% 0%, 90% 0%, 80% 100%, 0% 100%);
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .overlay-nav ul li a:hover::before {
+        opacity: 1;
+    }
+
+    .overlay-nav.show {
+        display: flex;
+    }
+
+    .overlay-nav.show ~ .mobile-header {
+        display: none;
+    }
+
+    .menu-icon-wrapper {
+        position: relative;
+        margin-right: 30px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu-icon {
+        width: 30px;
+        height: auto;
+        z-index: 1;
+    }
+
+    .menu-icon-bg {
+        position: absolute;
+        margin-right: 30px;
+        width: 50px;
+        height: 50px;
+        background: radial-gradient(circle, rgba(229, 229, 121, 1) 0%, rgba(229, 229, 121, 0) 100%);
+        border-radius: 50%;
+        transition: opacity 0.3s;
+        opacity: 0;
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    .menu-icon-wrapper:hover .menu-icon-bg {
+        opacity: 1;
+    }
+
 }
 
   /*only footer and content-mobile */
@@ -931,8 +960,23 @@ footer {
     }
 }
 
-@media only screen and (min-width: 431px) {
+
+
+@media only screen and (min-width: 1125px) {
+
     .overlay-nav {
-        display: none !important; /* 데스크탑에서는 항상 숨김 */
+        display: none !important;
     }
+
+    .mobile-header {
+        display: none;
+    }
+
+    h1 {
+        margin-top: 220px;
+        position: relative;
+        z-index: 1;
+    }
+
+    
 }

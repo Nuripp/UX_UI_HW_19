@@ -11,6 +11,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
+    <!-- Navbar -->
         <header class="navigation">
             <div class="inline-block logo">
                 <img src="Images\Logo.png" alt="logo">
@@ -28,15 +29,31 @@
             </nav>
         </header>
 
+        <!-- mobile header -->
         <div class="mobile-header">
-            <a href="#">
-                <img src="Images\Logo.png" alt="logo" class="mobile-logo">
-            </a>
-            <a href="#">
-                <img src="Images\mobile menu icon.png" alt="menu" class="menu-icon">
-            </a>
+            <img src="Images\Logo.png" alt="logo" class="mobile-logo">
+            <div class="menu-icon-wrapper">
+                <img src="Images\mobile menu icon.png" alt="menu" class="menu-icon" id="menu-icon">
+                <span class="menu-icon-bg"></span>
+            </div>
         </div>
 
+        <!--mobile overlay nav menu-->
+        <div class="overlay-nav" id="overlay-nav">
+            <div class="overlay-header">
+                <img src="Images\Logo.png" alt="logo" class="overlay-logo">
+                <img src="Images\icon-x close.png" alt="close" class="close-icon" id="close-icon">
+            </div>
+            <ul>
+                <li class="navigation=text"><a href="#">Home</a></li>
+                <li class="navigation=text"><a href="#">About Me</a></li>
+                <li class="navigation=text"><a href="#">Work</a></li>
+                <li class="navigation=text"><a href="#">Skills</a></li>
+                <li class="navigation=text"><a href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Content -->
         <section class="mySkills">
             <h1>Skills & Tools</h1>
             <div class="flexContainer">
@@ -101,6 +118,7 @@
             <div class="arrow-up"></div>
         </div>
 
+        <!-- Footer -->
         <footer class="footer">
             <div class="footer-content">
                 <div class="footer-logo">
